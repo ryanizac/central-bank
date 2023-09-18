@@ -2,12 +2,20 @@
   "name": "central-bank",
   "version": "1.0.0",
   "description": "An application to register and manage all banks.",
-  "scripts": {},
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "esbuild src/server.ts --bundle --packages=external --platform=node --target=esnext --format=cjs --outfile=dist/server.js",
+    "start": "node dist/server.js"
+  },
   "keywords": [
     "bank",
     "central",
     "money"
   ],
   "author": "Ryan Izac <io.ryan@outlook.com> (https://www.ryanizac.com.br)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.19.3",
+    "nodemon": "^3.0.1"
+  }
 }
