@@ -1,0 +1,13 @@
+{
+  "name": "central-bank",
+  "version": "1.0.0",
+  "description": "An application to register and manage all banks.",
+  "scripts": {},
+  "keywords": [
+    "bank",
+    "central",
+    "money"
+  ],
+  "author": "Ryan Izac <io.ryan@outlook.com> (https://www.ryanizac.com.br)",
+  "license": "MIT"
+}
