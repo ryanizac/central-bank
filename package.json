@@ -15,8 +15,10 @@
   "author": "Ryan Izac <io.ryan@outlook.com> (https://www.ryanizac.com.br)",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.6.3",
     "esbuild": "^0.19.3",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
