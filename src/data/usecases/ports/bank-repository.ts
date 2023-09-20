@@ -11,7 +11,6 @@ export namespace BankRepository {
     email: string;
     name: string;
     shortname: string;
-    cpf: string;
     cnpj: string;
   }>;
 

@@ -1,5 +1,3 @@
-import { Account } from "./account";
-
 export type Bank = {
   id: string;
   createdAt: Date;
@@ -10,5 +8,5 @@ export type Bank = {
   code: string;
   email: string;
   password: string;
-  account: Account;
+  cnpj: string;
 };

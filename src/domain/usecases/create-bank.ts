@@ -1,4 +1,4 @@
-import { Account, Bank } from "../models";
+import { Bank } from "../models";
 
 export type CreateBank = {
   execute(args: CreateBank.Args): Promise<CreateBank.Result>;
@@ -9,7 +9,7 @@ export namespace CreateBank {
     name: string;
     shortname: string;
     code: string;
-    account: Account;
+    cnpj: string;
     email: string;
     password: string;
   };

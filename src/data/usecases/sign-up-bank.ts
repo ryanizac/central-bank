@@ -11,20 +11,10 @@ export class SignUpUseCase implements CreateBank {
   }
 
   async execute(args: CreateBank.Args): Promise<CreateBank.Result> {
-    const { code, email, name, shortname, password, account } = args;
-
-    let cnpj: string | undefined = undefined,
-      cpf: string | undefined = undefined;
-
-    if (account.type === "business") {
-      cnpj = account.cnpj;
-    } else {
-      cpf = account.cpf;
-    }
+    const { code, email, name, shortname, password, cnpj } = args;
 
     const dataInUse = await this.bankRepository.exists({
       cnpj,
-      cpf,
       code,
       email,
       name,
@@ -58,7 +48,7 @@ export class SignUpUseCase implements CreateBank {
       shortname,
       code,
       email,
-      account,
+      cnpj,
       password,
     });
 
@@ -72,7 +62,7 @@ export class SignUpUseCase implements CreateBank {
         shortname,
         code,
         email,
-        account,
+        cnpj,
       },
     };
   }
