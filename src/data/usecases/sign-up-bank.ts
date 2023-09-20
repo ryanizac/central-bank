@@ -1,11 +1,11 @@
 import { CreateBank } from "../../domain";
 import { BankRepository, IdGenerator } from "./ports";
 
-export class RegisterBankUseCase implements CreateBank {
+export class SignUpUseCase implements CreateBank {
   private readonly idGenerator: IdGenerator;
   private readonly bankRepository: BankRepository;
 
-  constructor({ idGenerator, bankRepository }: RegisterBankUseCase.Ports) {
+  constructor({ idGenerator, bankRepository }: SignUpUseCase.Ports) {
     this.idGenerator = idGenerator;
     this.bankRepository = bankRepository;
   }
@@ -78,7 +78,7 @@ export class RegisterBankUseCase implements CreateBank {
   }
 }
 
-export namespace RegisterBankUseCase {
+export namespace SignUpUseCase {
   export type Ports = {
     idGenerator: IdGenerator;
     bankRepository: BankRepository;

@@ -1,2 +1,2 @@
 export * from "./ports";
-export * from "./register-bank";
+export * from "./sign-up-bank";
