@@ -1,1 +1,7 @@
-console.log("Hello, server!");
+import "dotenv/config";
+
+async function main() {
+  console.log("Hello, server!");
+}
+
+main();
