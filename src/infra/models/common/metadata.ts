@@ -18,9 +18,33 @@ export class ModelMetadata {
 
     this.metadata.set(ClassPrototype, "id", attribute);
   }
+
+  static setField<Proto extends object>({
+    ClassPrototype,
+    attribute,
+    type,
+  }: ModelMetadata.SetFieldOptions<Proto>) {
+    if (typeof attribute !== "string") {
+      throw new Error("The attribute must be a string");
+    }
+
+    const newField: ModelMetadata.Field = {
+      key: attribute,
+      type,
+    };
+
+    this.metadata.set(ClassPrototype, "fields", (prev) => [...prev, newField]);
+  }
 }
 
 export namespace ModelMetadata {
+  export type FieldType = "string" | "number" | "boolean" | "date";
+
+  export type Field = {
+    key: string;
+    type: FieldType;
+  };
+
   export type Data = {
     /**
      * The name of model
@@ -30,6 +54,10 @@ export namespace ModelMetadata {
      * The attribute that represents id
      */
     id: string;
+    /**
+     * The fields of class
+     */
+    fields: Field[];
   };
 
   export type Class = {
@@ -44,5 +72,11 @@ export namespace ModelMetadata {
   export type SetIdOptions<Proto extends object> = {
     ClassPrototype: Proto;
     attribute: keyof Proto;
+  };
+
+  export type SetFieldOptions<Proto extends object> = {
+    ClassPrototype: Proto;
+    attribute: keyof Proto;
+    type: FieldType;
   };
 }
