@@ -6,3 +6,16 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Bank {
+  id        String   @id
+  createdAt DateTime
+  updatedAt DateTime
+  active    Boolean
+  name      String
+  shortname String
+  code      String
+  email     String
+  password  String
+  cnpj      String
+}
